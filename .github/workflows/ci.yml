@@ -113,7 +113,7 @@ jobs:
           cache-to: type=gha,mode=max,scope=${{ matrix.name }}
       - name: Security scan (Trivy) - fail on HIGH/CRITICAL with a fix available
         if: needs.changes.outputs[matrix.name] == 'true'
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: scan/${{ matrix.name }}:ci
           severity: HIGH,CRITICAL
